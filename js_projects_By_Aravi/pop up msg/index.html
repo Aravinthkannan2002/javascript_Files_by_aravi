@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Popup Message Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Advanced Popup Message Generator</h1>
+        
+        <div class="tabs">
+            <div class="tab active" data-tab="basic">Basic Settings</div>
+            <div class="tab" data-tab="appearance">Appearance</div>
+            <div class="tab" data-tab="advanced">Advanced</div>
+        </div>
+        
+        <div class="tab-content active" id="basic-tab">
+            <div class="form-group">
+                <label for="popup-type">Popup Type</label>
+                <select id="popup-type">
+                    <option value="standard">Standard</option>
+                    <option value="alert">Alert</option>
+                    <option value="success">Success</option>
+                    <option value="error">Error</option>
+                    <option value="warning">Warning</option>
+                    <option value="info">Info</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="popup-title">Popup Title</label>
+                <input type="text" id="popup-title" value="Important Message">
+            </div>
+            
+            <div class="form-group">
+                <label for="popup-message">Popup Message</label>
+                <textarea id="popup-message">This is an important message that requires your attention.</textarea>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-column">
+                    <div class="form-group">
+                        <label for="primary-button">Primary Button Text</label>
+                        <input type="text" id="primary-button" value="OK">
+                    </div>
+                </div>
+                <div class="form-column">
+                    <div class="form-group">
+                        <label for="secondary-button">Secondary Button Text (leave empty for none)</label>
+                        <input type="text" id="secondary-button" value="Cancel">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="appearance-tab">
+            <div class="form-row">
+                <div class="form-column">
+                    <div class="form-group">
+                        <label for="popup-width">Width (px)</label>
+                        <input type="number" id="popup-width" value="500">
+                    </div>
+                </div>
+                <div class="form-column">
+                    <div class="form-group">
+                        <label for="border-radius">Border Radius (px)</label>
+                        <input type="number" id="border-radius" value="8">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-column">
+                    <div class="form-group">
+                        <label for="header-bg-color">Header Background Color</label>
+                        <input type="color" id="header-bg-color" value="#ffffff">
+                    </div>
+                </div>
+                <div class="form-column">
+                    <div class="form-group">
+                        <label for="header-text-color">Header Text Color</label>
+                        <input type="color" id="header-text-color" value="#333333">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-column">
+                    <div class="form-group">
+                        <label for="button-bg-color">Primary Button Color</label>
+                        <input type="color" id="button-bg-color" value="#4CAF50">
+                    </div>
+                </div>
+                <div class="form-column">
+                    <div class="form-group">
+                        <label for="button-text-color">Primary Button Text Color</label>
+                        <input type="color" id="button-text-color" value="#ffffff">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="advanced-tab">
+            <div class="form-row">
+                <div class="form-column">
+                    <div class="form-group form-switch">
+                        <label class="switch">
+                            <input type="checkbox" id="enable-overlay" checked>
+                            <span class="slider"></span>
+                        </label>
+                        <span>Enable Background Overlay</span>
+                    </div>
+                </div>
+                <div class="form-column">
+                    <div class="form-group form-switch">
+                        <label class="switch">
+                            <input type="checkbox" id="close-on-overlay" checked>
+                            <span class="slider"></span>
+                        </label>
+                        <span>Close on Overlay Click</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-column">
+                    <div class="form-group form-switch">
+                        <label class="switch">
+                            <input type="checkbox" id="show-close-button" checked>
+                            <span class="slider"></span>
+                        </label>
+                        <span>Show Close Button</span>
+                    </div>
+                </div>
+                <div class="form-column">
+                    <div class="form-group form-switch">
+                        <label class="switch">
+                            <input type="checkbox" id="enable-animation" checked>
+                            <span class="slider"></span>
+                        </label>
+                        <span>Enable Animation</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-column">
+                    <div class="form-group">
+                        <label for="animation-type">Animation Type</label>
+                        <select id="animation-type">
+                            <option value="fade">Fade</option>
+                            <option value="scale" selected>Scale</option>
+                            <option value="slide-down">Slide Down</option>
+                            <option value="slide-up">Slide Up</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-column">
+                    <div class="form-group">
+                        <label for="auto-close">Auto Close After (seconds, 0 to disable)</label>
+                        <input type="number" id="auto-close" value="0" min="0">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-row">
+            <button id="generate-btn">Generate Code</button>
+            <button id="preview-btn" class="preview-btn">Preview Popup</button>
+        </div>
+        
+        <div class="code-output" style="display: none;">
+            <button class="copy-btn">Copy Code</button>
+            <div class="tabs">
+                <div class="tab active" data-tab="html-code">HTML</div>
+                <div class="tab" data-tab="css-code">CSS</div>
+                <div class="tab" data-tab="js-code">JavaScript</div>
+                <div class="tab" data-tab="all-code">Complete Code</div>
+            </div>
+            <div class="tab-content active" id="html-code-tab">
+                <pre id="html-output"></pre>
+            </div>
+            <div class="tab-content" id="css-code-tab">
+                <pre id="css-output"></pre>
+            </div>
+            <div class="tab-content" id="js-code-tab">
+                <pre id="js-output"></pre>
+            </div>
+            <div class="tab-content" id="all-code-tab">
+                <pre id="all-output"></pre>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Popup Preview Container -->
+    <div class="popup-overlay" id="popup-preview">
+        <!-- Popup will be dynamically inserted here -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

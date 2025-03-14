@@ -1,0 +1,68 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    border: 2px solid green;
+    border-radius: 50px;
+    width: 500px;
+    margin-left: 400px;
+    margin-top: 55px;
+}
+
+/* Header Styling */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: rebeccapurple;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    border: 1px solid mediumaquamarine;
+    background-color: aqua;
+    width: 300px;
+    border-radius: 30px;
+    margin-left: 70px;
+}
+
+/* List Styling */
+ul#titles {
+    list-style-type: none; /* Remove default bullets */
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto; /* Center the list horizontally */
+}
+
+ul#titles li {
+    background-color: peachpuff;
+    margin-bottom: 10px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Hover Effect on List Items */
+ul#titles li:hover {
+    transform: translateY(-5px); /* Move item up slightly */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15); /* Add a more pronounced shadow */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    ul#titles {
+        padding: 0 10px;
+    }
+}
